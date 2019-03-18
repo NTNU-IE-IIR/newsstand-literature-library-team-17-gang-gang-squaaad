@@ -68,11 +68,11 @@ public class BookRegistry {
      * add 3 dummies to the list for testing.
      */
     public void fillBookRegistryWithDummies() {
-        this.bookList.add(new Book("Stig", "Den gode boka", 55, "Taver",
+        this.bookList.add(new Book("Den gode boka", "Stig", 55, "Taver",
                 "2011-04-14", "Issue 1"));
-        this.bookList.add(new Book("Ola", "Uthullet bok med sprit", 150, "NTNU",
+        this.bookList.add(new Book("Uthullet bok med sprit", "Ola", 150, "NTNU",
                 "2018-07-14", "Issue 4"));
-        this.bookList.add(new Book("Arill", "Skummel bok", 30, "FF",
+        this.bookList.add(new Book("Skummel bok", "Arill", 30, "FF",
                 "2017-12-27", "Issue 11"));
     }
 

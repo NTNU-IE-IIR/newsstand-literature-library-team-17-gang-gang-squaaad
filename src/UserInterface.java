@@ -153,7 +153,6 @@ public class UserInterface {
         String title = reader.nextLine();
 
         System.out.println("please enter the name of the author:");
-        reader = new Scanner(System.in);
         String author = reader.nextLine();
 
         System.out.println("please enter the number of pages:");
@@ -165,15 +164,12 @@ public class UserInterface {
         String publisher = reader.nextLine();
 
         System.out.println("please enter the release date:");
-        reader = new Scanner(System.in);
         String releaseDate = reader.nextLine();
 
         System.out.println("please enter the issue");
-        reader = new Scanner(System.in);
         String issue = reader.nextLine();
 
         //add the book to the register
-        int variabel;
         Book book = new Book(author, title, numberOfPages, publisher, releaseDate, issue);
         this.bookRegister.addBook(book);
 
