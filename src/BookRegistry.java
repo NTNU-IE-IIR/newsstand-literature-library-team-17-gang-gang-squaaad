@@ -39,6 +39,7 @@ public class BookRegistry {
         this.bookList.add(book);
     }
 
+
     /**
      * removes a book from the registry.
      *
@@ -50,7 +51,8 @@ public class BookRegistry {
         }
     }
 
-    public Iterator<Book> getIterator() {
+    public Iterator<Book> getIterator()
+    {
         return this.bookList.iterator();
     }
 
