@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Iterator;
+
 
 public class Inventory {
 
@@ -20,4 +22,13 @@ public class Inventory {
     {
         this.inventoryList.add(literature);
     }
+
+
+
+    public Iterator<Literature> getIterator()
+    {
+        return this.inventoryList.iterator();
+    }
+
+
 }
