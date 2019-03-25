@@ -14,7 +14,7 @@
  * @author (Stig Helge Bruset, Ola Sæterøy, Magnus Sandøy)
  * @version (v1)
  */
-public class Book {
+public class Book extends Literature{
     // instance variables - replace the example below with your own
     private String title;
     private String author;
