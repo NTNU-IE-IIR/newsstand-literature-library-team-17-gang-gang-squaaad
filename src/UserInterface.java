@@ -48,11 +48,11 @@ public class UserInterface {
                 int menuSelection = this.showMenu();
                 switch (menuSelection) {
                     case 1:
-                       this.findBookByTitle();
+                        this.findBookByTitle();
                         break;
 
                     case 2:
-                        //   this.findBookByAuthor();
+                        this.findBookByAuthor();
                         break;
 
                     case 3:
@@ -64,7 +64,7 @@ public class UserInterface {
                         break;
 
                     case 5:
-                        // this.getNumberOfBooks();
+                        this.getNumberOfBooks();
                         break;
 
                     case 6:
@@ -132,15 +132,8 @@ public class UserInterface {
         Iterator<Book> bookListIt = this.bookRegister.getIterator();
         while (bookListIt.hasNext()) {
             Book book = bookListIt.next();
-            System.out.println("________________________________");
-            System.out.println("title " + book.getTitle());
-            System.out.println("Author: " + book.getAuthor());
-            System.out.println("Pages: " + book.getPages());
-            System.out.println("Publisher: " + book.getPublisher());
-            System.out.println("Release date: " + book.getReleaseDate());
-            System.out.println("Issue: " + book.getIssue());
-            System.out.println("________________________________");
-            System.out.println("    ");       }
+            printInformation(book);
+        }
     }
 
     /**
@@ -183,13 +176,40 @@ public class UserInterface {
         Scanner reader = new Scanner(System.in);
         String searchWord = reader.next();
 
-        Iterator<Book> bookListIt = this.bookRegister.getIterator();
-        while (bookListIt.hasNext()) {
-            if (bookListIt.next().getTitle().equals(searchWord)) {
-                bookListIt.remove();
-            } else {
-                bookListIt.next();
-            }
+        if (bookRegister.removeBook(searchWord)) {
+            System.out.println("successfully removed");
+        } else {
+            System.out.println("search gave no results, no action was taken");
+        }
+
+    }
+
+
+    /**
+     *
+     */
+    private void getNumberOfBooks() {
+        int numberOfBooks = bookRegister.getNumberOfBooks();
+        System.out.println(" ");
+        System.out.println("library size: " + " " + numberOfBooks);
+    }
+
+
+    /**
+     * Find a book by searching with entered keyword
+     */
+
+    private void findBookByAuthor() {
+        System.out.println("please enter keyword");
+        Scanner reader = new Scanner(System.in);
+        String searchWord = reader.next();
+
+        Book result = this.bookRegister.findBookByAuthor(searchWord);
+        if (result != null) {
+            printInformation(result);
+        } else {
+            System.out.println(" ");
+            System.out.println("Search gave no results");
         }
     }
 
@@ -202,15 +222,27 @@ public class UserInterface {
         Scanner reader = new Scanner(System.in);
         String searchWord = reader.next();
 
-        Iterator<Book> bookListIt = this.bookRegister.getIterator();
-        while (bookListIt.hasNext()) {
-            if (bookListIt.next().getTitle().equals(searchWord)) {
-
-            } else {
-                bookListIt.next();
-            }
+        Book result = this.bookRegister.findBookByTitle(searchWord);
+        if (result != null) {
+            printInformation(result);
+        } else {
+            System.out.println(" ");
+            System.out.println("Search gave no results");
         }
     }
 
+    private void printInformation(Book book) {
+        System.out.println(" ");
+        System.out.println("________________________________");
+        System.out.println("title " + book.getTitle());
+        System.out.println("Author: " + book.getAuthor());
+        System.out.println("Pages: " + book.getPages());
+        System.out.println("Publisher: " + book.getPublisher());
+        System.out.println("Release date: " + book.getReleaseDate());
+        System.out.println("Issue: " + book.getIssue());
+        System.out.println("________________________________");
+
+    }
 }
+
 

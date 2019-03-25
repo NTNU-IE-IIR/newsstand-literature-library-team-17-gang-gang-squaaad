@@ -48,7 +48,7 @@ public class BookTest
     @Test
     public void testGetMethods()
     {
-        Book book1 = new Book("Test Testeson", "test", 18, "testington academy", "last week", "1");
+        Book book1 = new Book("test", "Test Testeson", 18, "testington academy", "last week", "1");
         assertEquals("Test Testeson", book1.getAuthor());
         assertEquals("1", book1.getIssue());
         assertEquals(18, book1.getPages());

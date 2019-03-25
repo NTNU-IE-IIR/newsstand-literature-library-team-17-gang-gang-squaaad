@@ -15,7 +15,7 @@ import java.util.Iterator;
  * <li>find book by author</li>
  * </ul>
  *
- * @author (Stig Helge Bruset)
+ * @author (Stig Helge Bruset, Ola Sæterøy, Magnus Sandøy)
  * @version (v1)
  */
 public class BookRegistry {
@@ -42,12 +42,22 @@ public class BookRegistry {
     /**
      * removes a book from the registry.
      *
-     * @param index The index of the book to be removed.
+     * @param searchWord The title of the book to be removed.
      */
-    public void removeBook(int index) {
-        if (index >= 0 && index < this.bookList.size()) {
-            this.bookList.remove(index);
-        }
+    public boolean removeBook(String searchWord) {
+        Iterator<Book> bookListIt = this.bookList.iterator();
+
+        boolean removed = false;
+        searchWord = searchWord.toLowerCase();
+        while (bookListIt.hasNext()) {
+            if (bookListIt.next().getTitle().toLowerCase().equals(searchWord)) {
+                bookListIt.remove();
+                removed = true;
+            } else {
+                bookListIt.next();
+
+            }
+        }return removed;
     }
 
     public Iterator<Book> getIterator() {
@@ -80,12 +90,12 @@ public class BookRegistry {
      * Search the bookRegistry for the book with the title given.
      * Returns the book if found. If not found null is returned.
      */
-    public Book findBookByTitle(String title) {
+    public Book findBookByTitle(String searchWord) {
         Book book = null;
-
-        for (Book p : this.bookList) {
-            if (p.getTitle().contains(title)) {
-                book = p;
+        searchWord = searchWord.toLowerCase().trim();
+        for (Book b : this.bookList) {
+            if (b.getTitle().toLowerCase().trim().contains(searchWord)) {
+                book = b;
             }
         }
 
@@ -99,12 +109,12 @@ public class BookRegistry {
      * the same author only the last one is returned.
      * (It's a feature not a bug!!! don't @ me)
      */
-    public Book findBookByAuthor(String author) {
+    public Book findBookByAuthor(String searchWord) {
         Book book = null;
-
-        for (Book p : this.bookList) {
-            if (p.getAuthor().contains(author)) {
-                book = p;
+        searchWord = searchWord.toLowerCase().trim();
+        for (Book b : this.bookList) {
+            if (b.getAuthor().toLowerCase().trim().contains(searchWord)) {
+                book = b;
             }
         }
 
