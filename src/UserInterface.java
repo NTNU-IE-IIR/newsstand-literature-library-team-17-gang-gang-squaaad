@@ -104,7 +104,7 @@ public class UserInterface {
         for (String menuItem : menuItems) {
             System.out.println(menuItem);
         }
-        int maxMenuItemNumber = menuItems.length + 1;
+        int maxMenuItemNumber = menuItems.length - 2;
         // Add the "Exit"-choice to the menu
         System.out.println(maxMenuItemNumber + ". Exit\n");
         System.out.println("Please choose menu item (1-" + maxMenuItemNumber + "): ");

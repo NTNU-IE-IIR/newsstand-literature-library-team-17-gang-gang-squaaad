@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 
 public abstract class Literature {
     protected String title;

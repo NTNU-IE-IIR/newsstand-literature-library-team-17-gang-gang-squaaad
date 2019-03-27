@@ -15,29 +15,28 @@
  * @version (v1)
  */
 public class Book extends Literature {
-    // instance variables - replace the example below with your own
-    // private String title;
+    private String title;
     private String author;
     private int numberOfPages;
-    //  private String publisher;
+    private String publisher;
     private String releaseDate;
     private String issue;
+
 
     /**
      * Constructor for objects of class Book
      */
+
+    public Book(String title, String author, int numberOfPages, String publisher, String releaseDate, String issue) {
+        super(title, publisher);
+        this.author = author;
+        this.numberOfPages = numberOfPages;
+        this.releaseDate = releaseDate;
+        this.issue = issue;
+    }
+
+
     /**
-     * public Book(String title, String author, int numberOfPages,
-     * String publisher, String releaseDate, String issue) {
-     * super.title = title;
-     * this.author = author;
-     * this.numberOfPages = numberOfPages;
-     * this.publisher = publisher;
-     * this.releaseDate = releaseDate;
-     * this.issue = issue;
-     * }
-     * <p>
-     * /**
      * Returns the title of the book.
      *
      * @return the title of the book on the form "title".
