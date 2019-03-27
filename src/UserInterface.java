@@ -13,7 +13,7 @@ import java.util.Iterator;
  */
 
 public class UserInterface {
-    private BookRegistry bookRegister;
+    private Inventory inventory;
     /**
      * The menu that will be displayed upon launch
      */
@@ -32,7 +32,7 @@ public class UserInterface {
             };
 
     public UserInterface() {
-        bookRegister = new BookRegistry();
+        inventory = new Inventory();
     }
 
     /**
@@ -72,7 +72,7 @@ public class UserInterface {
                         break;
 
                     case 7:
-                        this.bookRegister.fillBookRegistryWithDummies();
+                        //this.inventory.fillBookRegistryWithDummies();
                         break;
 
 
@@ -129,7 +129,7 @@ public class UserInterface {
      * List all the book objects in the ArrayList
      */
     private void listAllBooks() {
-        Iterator<Book> bookListIt = this.bookRegister.getIterator();
+        Iterator<Literature> inventoryIt = this.inventory.getIterator();
         while (bookListIt.hasNext()) {
             Book book = bookListIt.next();
             printInformation(book);

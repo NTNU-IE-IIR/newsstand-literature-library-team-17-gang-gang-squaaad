@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
-public class Literature {
-    private String title;
-    private String publisher;
+public abstract class Literature {
+    protected String title;
+    protected String publisher;
 
     /**
      * Constructor for objects of class Literature.
@@ -10,6 +10,8 @@ public class Literature {
      * @param title    The title of the literature.
      * @param publisher   The name of the publisher of the literature.
      */
+
+
     public Literature(String title, String publisher)
     {
        this.title = title;
