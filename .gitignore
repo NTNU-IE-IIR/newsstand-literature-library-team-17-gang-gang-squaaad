@@ -3,6 +3,8 @@ out/
 
 \.idea/
 
-*.iml
+Newsstand v1\.3\.iml
+
+*.class
 
 README\.md

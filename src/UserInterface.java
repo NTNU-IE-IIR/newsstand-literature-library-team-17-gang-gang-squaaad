@@ -106,7 +106,8 @@ public class UserInterface {
         }
         int maxMenuItemNumber = menuItems.length - 2;
         // Add the "Exit"-choice to the menu
-        System.out.println(maxMenuItemNumber + ". Exit\n");
+        //"-2" er lagt inn pga linjer som er lagt inn i menyen
+        System.out.println(maxMenuItemNumber - 2 + ". Exit\n");
         System.out.println("Please choose menu item (1-" + maxMenuItemNumber + "): ");
         // Read input from user
         Scanner reader = new Scanner(System.in);
@@ -244,5 +245,3 @@ public class UserInterface {
 
     }
 }
-
-
