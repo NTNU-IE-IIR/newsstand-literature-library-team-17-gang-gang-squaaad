@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class Literature {
     private String title;
     private String publisher;
@@ -16,11 +14,21 @@ public class Literature {
         this.publisher = publisher;
     }
 
+    /**
+     * returns the current literature title.
+     *
+     * @return the title of the literature on the form "title".
+     */
     public String getTitle()
     {
         return this.title;
     }
 
+    /**
+     * returns the publisher of the literature.
+     *
+     * @return the publisher of the literature on the form "publisher".
+     */
     public String getPublisher()
     {
         return this.publisher;
