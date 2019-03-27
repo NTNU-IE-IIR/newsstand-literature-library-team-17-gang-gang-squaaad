@@ -51,9 +51,9 @@ public class UserInterface {
                         this.findBookByTitle();
                         break;
 
-                    case 2:
-                        this.findBookByAuthor();
-                        break;
+             //       case 2:
+               //         this.findBookByAuthor();
+               //         break;
 
                     case 3:
                         this.addNewBook();
@@ -130,9 +130,9 @@ public class UserInterface {
      */
     private void listAllBooks() {
         Iterator<Literature> inventoryIt = this.inventory.getIterator();
-        while (bookListIt.hasNext()) {
-            Book book = bookListIt.next();
-            printInformation(book);
+        while (inventoryIt.hasNext()) {
+            Literature literature = inventoryIt.next();
+            printInformation(literature);
         }
     }
 
@@ -163,8 +163,8 @@ public class UserInterface {
         String issue = reader.nextLine();
 
         //add the book to the register
-        Book book = new Book(author, title, numberOfPages, publisher, releaseDate, issue);
-        this.bookRegister.addBook(book);
+    //    Book book = new Book(author, title, numberOfPages, publisher, releaseDate, issue);
+    //    this.bookRegister.addBook(book);
 
     }
 
@@ -176,7 +176,7 @@ public class UserInterface {
         Scanner reader = new Scanner(System.in);
         String searchWord = reader.next();
 
-        if (bookRegister.removeBook(searchWord)) {
+        if (inventory.removeLiterature(searchWord)) {
             System.out.println("successfully removed");
         } else {
             System.out.println("search gave no results, no action was taken");
@@ -189,7 +189,7 @@ public class UserInterface {
      *
      */
     private void getNumberOfBooks() {
-        int numberOfBooks = bookRegister.getNumberOfBooks();
+        int numberOfBooks = inventory.getInventorySize();
         System.out.println(" ");
         System.out.println("library size: " + " " + numberOfBooks);
     }
@@ -199,12 +199,12 @@ public class UserInterface {
      * Find a book by searching with entered keyword
      */
 
-    private void findBookByAuthor() {
+  /**  private void findBookByAuthor() {
         System.out.println("please enter keyword");
         Scanner reader = new Scanner(System.in);
         String searchWord = reader.next();
 
-        Book result = this.bookRegister.findBookByAuthor(searchWord);
+        Book result = this.inventory.findBookByAuthor(searchWord);
         if (result != null) {
             printInformation(result);
         } else {
@@ -222,7 +222,7 @@ public class UserInterface {
         Scanner reader = new Scanner(System.in);
         String searchWord = reader.next();
 
-        Book result = this.bookRegister.findBookByTitle(searchWord);
+        Literature result = this.inventory.findLiteratureByTitle(searchWord);
         if (result != null) {
             printInformation(result);
         } else {
@@ -231,15 +231,15 @@ public class UserInterface {
         }
     }
 
-    private void printInformation(Book book) {
+    private void printInformation(Literature literature) {
         System.out.println(" ");
         System.out.println("________________________________");
-        System.out.println("title " + book.getTitle());
-        System.out.println("Author: " + book.getAuthor());
-        System.out.println("Pages: " + book.getPages());
-        System.out.println("Publisher: " + book.getPublisher());
-        System.out.println("Release date: " + book.getReleaseDate());
-        System.out.println("Issue: " + book.getIssue());
+      //  System.out.println("title " + literature.getTitle());
+      //  System.out.println("Author: " + literature.getAuthor());
+      //  System.out.println("Pages: " + literature.getPages());
+        System.out.println("Publisher: " + literature.getPublisher());
+      //  System.out.println("Release date: " + literature.getReleaseDate());
+       // System.out.println("Issue: " + literature.getIssue());
         System.out.println("________________________________");
 
     }
