@@ -21,7 +21,7 @@ import java.util.Iterator;
 public class Inventory {
 
     private ArrayList<Literature> inventoryList;
-
+ 
     /**
      * Constructor for objects of class Inventory.
      */
