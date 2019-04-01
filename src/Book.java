@@ -4,8 +4,6 @@
  * <p>
  * With this class you can
  * <ul>
- * <li>Get the title </li>
- * <li>Get the author's name</li>
  * <li>Get the number of pages</li>
  * <li>Get the publisher</li>
  * <li>Get the current issue</li>
