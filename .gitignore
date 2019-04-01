@@ -1,9 +1,4 @@
 
+out/
+
 \.idea/
-build.xml
-manifest.mf
-nbproject/
-
-Newsstand v1\.3\.iml
-
-*.class
