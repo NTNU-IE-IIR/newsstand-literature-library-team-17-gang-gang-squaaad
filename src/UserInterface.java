@@ -137,31 +137,53 @@ public class UserInterface {
         }
     }
 
+
+    /**
+     *
+     * @return Userinput on  the form of a string
+     */
+    private String userInputString()
+    {
+        Scanner reader = new Scanner(System.in);
+        String userInput = reader.nextLine();
+
+        return userInput;
+    }
+
+    /**
+     *
+     * @return userinput on the form of int
+     */
+    private int userInputInt()
+    {
+        Scanner reader = new Scanner(System.in);
+        int userInput = reader.nextInt();
+
+        return userInput;
+    }
+
     /**
      * Add a new book to the register through the UI
      */
     private void addNewBook() {
         //The user has choosen to add a new book
         System.out.println("please enter the title of the book:");
-        Scanner reader = new Scanner(System.in);
-        String title = reader.nextLine();
+        String title = userInputString();
 
         System.out.println("please enter the name of the author:");
-        String author = reader.nextLine();
+        String author = userInputString();
 
         System.out.println("please enter the number of pages:");
-        reader = new Scanner(System.in);
-        int numberOfPages = reader.nextInt();
+        int numberOfPages = userInputInt();
 
         System.out.println("please enter the name of the publisher:");
-        reader = new Scanner(System.in);
-        String publisher = reader.nextLine();
+        String publisher = userInputString();
 
         System.out.println("please enter the release date:");
-        String releaseDate = reader.nextLine();
+        String releaseDate = userInputString();
 
         System.out.println("please enter the issue");
-        String issue = reader.nextLine();
+        String issue = userInputString();
 
         //add the book to the register
     //    Book book = new Book(author, title, numberOfPages, publisher, releaseDate, issue);
