@@ -5,7 +5,7 @@ public class Newspaper extends Literature
     private String issue;
 
     /**
-     * Constructor for objects of class newspaper.
+     * Constructor for objects of class MessagePost.
      *
      * @param title
      * @param publisher
@@ -17,12 +17,6 @@ public class Newspaper extends Literature
         this.issue = issue;
     }
 
-
-    /**
-     * returns the current mewspaper issue.
-     *
-     * @return the issue of the newspaper on the form "issue".
-     */
     public String getIssue()
     {
         return this.issue;

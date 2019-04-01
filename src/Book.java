@@ -14,7 +14,8 @@
  * @author (Stig Helge Bruset, Ola Sæterøy, Magnus Sandøy)
  * @version (v1)
  */
-public class Book extends Literature {
+public class Book {
+    // instance variables - replace the example below with your own
     private String title;
     private String author;
     private int numberOfPages;
@@ -22,19 +23,18 @@ public class Book extends Literature {
     private String releaseDate;
     private String issue;
 
-
     /**
      * Constructor for objects of class Book
      */
-
-    public Book(String title, String author, int numberOfPages, String publisher, String releaseDate, String issue) {
-        super(title, publisher);
+    public Book(String title, String author, int numberOfPages,
+                String publisher, String releaseDate, String issue) {
+        this.title = title;
         this.author = author;
         this.numberOfPages = numberOfPages;
+        this.publisher = publisher;
         this.releaseDate = releaseDate;
         this.issue = issue;
     }
-
 
     /**
      * Returns the title of the book.
