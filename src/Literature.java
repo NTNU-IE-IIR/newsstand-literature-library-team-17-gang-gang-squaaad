@@ -6,12 +6,13 @@ public abstract class Literature {
     /**
      * Constructor for objects of class Literature.
      *
-     * @param title     The title of the literature.
-     * @param publisher The name of the publisher of the literature.
+     * @param title    The title of the literature.
+     * @param publisher   The name of the publisher of the literature.
      */
 
 
-    public Literature(String title, String publisher) {
+    public Literature(String title, String publisher)
+    {
         this.title = title;
         this.publisher = publisher;
     }
@@ -21,7 +22,8 @@ public abstract class Literature {
      *
      * @return the title of the literature on the form "title".
      */
-    public String getTitle() {
+    public String getTitle()
+    {
         return this.title;
     }
 
@@ -30,7 +32,8 @@ public abstract class Literature {
      *
      * @return the publisher of the literature on the form "publisher".
      */
-    public String getPublisher() {
+    public String getPublisher()
+    {
         return this.publisher;
     }
 

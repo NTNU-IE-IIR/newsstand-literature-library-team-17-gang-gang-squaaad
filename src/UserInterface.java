@@ -21,11 +21,11 @@ public class UserInterface {
     private String[] menuItems =
             {
                     "--------------------------",
-                    "1 .Search for title",
-                    "2.X Search for book by author",
-                    "3.X Add new book",
-                    "4.X Remove book",
-                    "5. Get library size",
+                    "1 .Search for book by title",
+                    "2. Search for book by author",
+                    "3. Add new book",
+                    "4. Remove book",
+                    "5. Get number of books",
                     "6. List all books",
                     "-------------------------",
                     "7. (Dev.)Fill With dummies"
@@ -48,12 +48,12 @@ public class UserInterface {
                 int menuSelection = this.showMenu();
                 switch (menuSelection) {
                     case 1:
-                        this.findByTitle();
+                        this.findBookByTitle();
                         break;
 
-                    //       case 2:
-                    //         this.findBookByAuthor();
-                    //         break;
+             //       case 2:
+               //         this.findBookByAuthor();
+               //         break;
 
                     case 3:
                         this.addNewBook();
@@ -64,7 +64,7 @@ public class UserInterface {
                         break;
 
                     case 5:
-                        this.getLibrarySize();
+                        this.getNumberOfBooks();
                         break;
 
                     case 6:
@@ -141,7 +141,7 @@ public class UserInterface {
      * Add a new book to the register through the UI
      */
     private void addNewBook() {
-        //The user has chosen to add a new book
+        //The user has choosen to add a new book
         System.out.println("please enter the title of the book:");
         Scanner reader = new Scanner(System.in);
         String title = reader.nextLine();
@@ -164,8 +164,8 @@ public class UserInterface {
         String issue = reader.nextLine();
 
         //add the book to the register
-        //    Book book = new Book(author, title, numberOfPages, publisher, releaseDate, issue);
-        //    this.bookRegister.addBook(book);
+    //    Book book = new Book(author, title, numberOfPages, publisher, releaseDate, issue);
+    //    this.bookRegister.addBook(book);
 
     }
 
@@ -189,7 +189,7 @@ public class UserInterface {
     /**
      *
      */
-    private void getLibrarySize() {
+    private void getNumberOfBooks() {
         int numberOfBooks = inventory.getInventorySize();
         System.out.println(" ");
         System.out.println("library size: " + " " + numberOfBooks);
@@ -200,26 +200,25 @@ public class UserInterface {
      * Find a book by searching with entered keyword
      */
 
+  /**  private void findBookByAuthor() {
+        System.out.println("please enter keyword");
+        Scanner reader = new Scanner(System.in);
+        String searchWord = reader.next();
+
+        Book result = this.inventory.findBookByAuthor(searchWord);
+        if (result != null) {
+            printInformation(result);
+        } else {
+            System.out.println(" ");
+            System.out.println("Search gave no results");
+        }
+    }
+
     /**
-     * private void findBookByAuthor() {
-     * System.out.println("please enter keyword");
-     * Scanner reader = new Scanner(System.in);
-     * String searchWord = reader.next();
-     * <p>
-     * Book result = this.inventory.findBookByAuthor(searchWord);
-     * if (result != null) {
-     * printInformation(result);
-     * } else {
-     * System.out.println(" ");
-     * System.out.println("Search gave no results");
-     * }
-     * }
-     * <p>
-     * /**
      * Find a book by searching with entered keyword
      */
 
-    private void findByTitle() {
+    private void findBookByTitle() {
         System.out.println("please enter keyword");
         Scanner reader = new Scanner(System.in);
         String searchWord = reader.next();
@@ -236,12 +235,12 @@ public class UserInterface {
     private void printInformation(Literature literature) {
         System.out.println(" ");
         System.out.println("________________________________");
-        //  System.out.println("title " + literature.getTitle());
-        //  System.out.println("Author: " + literature.getAuthor());
-        //  System.out.println("Pages: " + literature.getPages());
+      //  System.out.println("title " + literature.getTitle());
+      //  System.out.println("Author: " + literature.getAuthor());
+      //  System.out.println("Pages: " + literature.getPages());
         System.out.println("Publisher: " + literature.getPublisher());
-        //  System.out.println("Release date: " + literature.getReleaseDate());
-        // System.out.println("Issue: " + literature.getIssue());
+      //  System.out.println("Release date: " + literature.getReleaseDate());
+       // System.out.println("Issue: " + literature.getIssue());
         System.out.println("________________________________");
 
     }
