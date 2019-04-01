@@ -12,8 +12,8 @@ public class Literature {
      */
     public Literature(String title, String publisher)
     {
-       this.title = title;
-       this.publisher = publisher;
+        this.title = title;
+        this.publisher = publisher;
     }
 
     public String getTitle()
