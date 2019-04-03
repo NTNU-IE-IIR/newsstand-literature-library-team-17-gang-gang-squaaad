@@ -68,5 +68,6 @@ public class BookTest {
         assertEquals("test", book1.getTitle());
         assertEquals("1", book1.getIssue());
     }
+
 }
 

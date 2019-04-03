@@ -36,7 +36,7 @@ public class InventoryTest {
      * Tests the search author method
      */
     @Test
-    public void SearchTitleTest()
+    public void searchTitleTest()
     {
         Inventory inventory = new Inventory();
         inventory.fillBookRegistryWithDummies();
@@ -50,6 +50,13 @@ public class InventoryTest {
         Inventory inventory = new Inventory();
         inventory.fillBookRegistryWithDummies();
         assertEquals(3, inventory.getInventorySize());
+    }
+    @Test
+    public void testSearchbyNameNotFound()
+    {
+        Inventory inventory = new Inventory();
+        inventory.fillBookRegistryWithDummies();
+        assertNull(inventory.findLiteratureByTitle("piratebay copi"));
     }
 
 }
