@@ -54,9 +54,9 @@ public class Inventory {
             if (inventoryListIt.next().getTitle().toLowerCase().equals(searchWord)) {
                 inventoryListIt.remove();
                 removed = true;
-            } else {
+            }
+            if (inventoryListIt.hasNext()) {
                 inventoryListIt.next();
-
             }
         }
         return removed;
@@ -122,8 +122,7 @@ public class Inventory {
                 if (searchResult.getAuthor().toLowerCase().trim().contains(searchWord)) {
                     literature = searchResult;
                 }
-            }
-            else  inventoryListIt.next();
+            } else inventoryListIt.next();
         }
         return literature;
     }

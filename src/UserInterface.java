@@ -4,7 +4,7 @@ import java.util.Iterator;
 
 /**
  * Makes up the user interface (text based) of the application
- * Resoponsible for all user interaction, like displaying the menu
+ * Responsible for all user interaction, like displaying the menu
  * and receiving input from the user.
  * </ul>
  *
@@ -155,6 +155,16 @@ public class UserInterface {
         return menuSelection;
     }
 
+    /**
+     * Displays the menu to the user, and waits for the users input. The user is
+     * expected to input an integer between 1 and the max number of menu items.
+     * If the user inputs anything else, an InputMismatchException is thrown.
+     * The method returns the valid input from the user.
+     *
+     * @return the menu number (between 1 and max menu item number) provided by the user.
+     * @throws InputMismatchException if user enters an invalid number/menu choice
+     */
+
     private int showBookMenu() throws InputMismatchException {
         System.out.println("\n**** BookMenu ****\n");
         // Display the menu
@@ -217,7 +227,6 @@ public class UserInterface {
      * Add a new book to the register through the UI
      */
     private void addNewBook() {
-        //The user has choosen to add a new book
         System.out.println("please enter the title of the book:");
         String title = userInputString();
 

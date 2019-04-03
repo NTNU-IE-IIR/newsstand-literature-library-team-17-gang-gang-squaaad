@@ -1,5 +1,19 @@
 import java.util.ArrayList;
 
+/**
+ * This is the Newspaper class
+ * it will keep track of the newspapers in the store
+ * <p>
+ * With this class you can
+ * <ul>
+ * <li>Get the title</li>
+ * <li>Get the publisher</li>
+ * <li>Get the current issue</li>
+ * </ul>
+ *
+ * @author (Stig Helge Bruset, Ola Sæterøy, Magnus Sandøy)
+ * @version (v1)
+ */
 public class Newspaper extends Literature
 {
     private String issue;

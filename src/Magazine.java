@@ -6,7 +6,7 @@
  * <ul>
  * <li>Get the issue </li>
  * <li>Get the genre</li>
- * <li>Get the number of Realeses</li>
+ * <li>Get the number of Releases</li>
  * </ul>
  *
  * @author (Stig Helge Bruset, Ola Sæterøy, Magnus Sandøy)
