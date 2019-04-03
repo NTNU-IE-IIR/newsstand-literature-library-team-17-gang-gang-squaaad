@@ -245,9 +245,9 @@ public class UserInterface {
         System.out.println("please enter the issue");
         String issue = userInputString();
 
-        //add the book to the register
-        //    Book book = new Book(author, title, numberOfPages, publisher, releaseDate, issue);
-        //    this.bookRegister.addBook(book);
+       // add the book to the register
+           Book book = new Book(author, title, numberOfPages, publisher, releaseDate, issue);
+            this.inventory.addBook(book);
 
     }
 
