@@ -13,10 +13,8 @@
  * @version (v1)
  */
 public class Book extends Literature {
-    private String title;
     private String author;
     private int numberOfPages;
-    private String publisher;
     private String releaseDate;
     private String issue;
 

@@ -79,17 +79,17 @@ public class Inventory {
     /**
      * add 3 dummies to the list for testing.
      */
+
+    public void fillBookRegistryWithDummies() {
+        this.inventoryList.add(new Book("Den gode boka", "Stig", 55, "Taver",
+                "2011-04-14", "Issue 1"));
+        this.inventoryList.add(new Book("Uthullet bok med sprit", "Ola", 150, "NTNU",
+                "2018-07-14", "Issue 4"));
+        this.inventoryList.add(new Book("Skummel bok", "Arill", 30, "FF",
+                "2017-12-27", "Issue 11"));
+    }
+
     /**
-     * public void fillBookRegistryWithDummies() {
-     * this.inventoryList.add(new Book("Den gode boka", "Stig", 55, "Taver",
-     * "2011-04-14", "Issue 1"));
-     * this.inventoryList.add(new Book("Uthullet bok med sprit", "Ola", 150, "NTNU",
-     * "2018-07-14", "Issue 4"));
-     * this.inventoryList.add(new Book("Skummel bok", "Arill", 30, "FF",
-     * "2017-12-27", "Issue 11"));
-     * }
-     * <p>
-     * /**
      * Search the bookRegistry for the book with the title given.
      * Returns the book if found. If not found null is returned.
      */
@@ -112,19 +112,18 @@ public class Inventory {
      * the same author only the last one is returned.
      * (It's a feature not a bug!!! don't @ me)
      */
-    public Literature findLiteratureByAuthor(String searchWord) {
+    public Literature findBookByAuthor(String searchWord) {
         Literature literature = null;
         searchWord = searchWord.toLowerCase().trim();
-        for (Literature lit : this.inventoryList) {
-            if (lit instanceof Book) {
-                Book book = (Book) lit;
-                if (book.getAuthor().toLowerCase().trim().contains(searchWord))
-                {
-                    literature = lit;
+        Iterator<Literature> inventoryListIt = this.inventoryList.iterator();
+        while (inventoryListIt.hasNext()) {
+            if (inventoryListIt.next() instanceof Book) {
+                Book searchResult = (Book) inventoryListIt.next();
+                if (searchResult.getAuthor().toLowerCase().trim().contains(searchWord)) {
+                    literature = searchResult;
                 }
             }
-
-
+            else  inventoryListIt.next();
         }
         return literature;
     }
