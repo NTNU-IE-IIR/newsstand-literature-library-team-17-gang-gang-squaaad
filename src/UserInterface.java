@@ -99,36 +99,7 @@ public class UserInterface {
     }
 
     /**
-     * Shows the Menu for books
-     */
-    private void startBookMenu() {
-        boolean quit = false;
-
-        while (!quit) {
-            try {
-                int menuSelection = this.showBookMenu();
-                switch (menuSelection) {
-                    case 1:
-                        this.findBookByAuthor();
-                        break;
-
-                    case 2:
-                        this.addNewBook();
-                        break;
-
-                    case 3:
-                        System.out.println("\nThank you for using BookRegistry v1. Bye!\n");
-                        quit = true;
-                        break;
-                    default:
                 }
-            } catch (InputMismatchException ime) {
-                System.out.println("\nERROR: Please provide a number between 1 and " + this.mainMenuItems.length + "..\n");
-            }
-        }
-    }
-
-    /**
      * Displays the menu to the user, and waits for the users input. The user is
      * expected to input an integer between 1 and the max number of menu items.
      * If the user inputs anything else, an InputMismatchException is thrown.
@@ -140,35 +111,7 @@ public class UserInterface {
     private int showMenu() throws InputMismatchException {
         System.out.println("\n**** BookRegistry v0.1 ****\n");
         // Display the menu
-        for (String mainMenuItems : mainMenuItems) {
-            System.out.println(mainMenuItems);
-        }
-        int maxMenuItemNumber = mainMenuItems.length - 1;
-        System.out.println(maxMenuItemNumber + ". Exit\n");
-        System.out.println("Please choose menu item (1-" + maxMenuItemNumber + "): ");
-        // Read input from user
-        Scanner reader = new Scanner(System.in);
-        int menuSelection = reader.nextInt();
-        if ((menuSelection < 1) || (menuSelection > maxMenuItemNumber)) {
-            throw new InputMismatchException();
-        }
-        return menuSelection;
-    }
 
-    /**
-     * Displays the menu to the user, and waits for the users input. The user is
-     * expected to input an integer between 1 and the max number of menu items.
-     * If the user inputs anything else, an InputMismatchException is thrown.
-     * The method returns the valid input from the user.
-     *
-     * @return the menu number (between 1 and max menu item number) provided by the user.
-     * @throws InputMismatchException if user enters an invalid number/menu choice
-     */
-
-    private int showBookMenu() throws InputMismatchException {
-        System.out.println("\n**** BookMenu ****\n");
-        // Display the menu
-        for (String menuItem : bookMenuItems) {
             System.out.println(menuItem);
         }
         int maxMenuItemNumber = bookMenuItems.length - 1;
@@ -245,9 +188,7 @@ public class UserInterface {
         System.out.println("please enter the issue");
         String issue = userInputString();
 
-       // add the book to the register
            Book book = new Book(author, title, numberOfPages, publisher, releaseDate, issue);
-            this.inventory.addBook(book);
 
     }
 
